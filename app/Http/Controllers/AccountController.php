@@ -20,15 +20,11 @@ class AccountController extends Controller
 
         try {
             $users = $this->userRepo->getAll();
+
             if (isset($users)){
-                return response()->json([
-                    'msg' => 'Success',
-                    'data' => $users
-                ]);
+                return view('admin.user.index')->with(compact('users'));
             }
-            return response()->json([
-                'msg' => 'Fail'
-            ]);
+            return abort(500);
 
         } catch (Exception $ex) {
             report($ex);
