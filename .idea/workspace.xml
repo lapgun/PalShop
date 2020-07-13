@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="876bb5a4-4795-431b-a68a-00bf2e7c53c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/admin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pal-snaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pal-snaker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +140,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../caremalll/caremall-eccube" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,6 +150,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js" />
       <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\sass\adminLte" />
@@ -168,7 +177,8 @@
       <workItem from="1589949858931" duration="2922000" />
       <workItem from="1590133767992" duration="686000" />
       <workItem from="1590656936782" duration="108000" />
-      <workItem from="1590657074614" duration="21807000" />
+      <workItem from="1590657074614" duration="24463000" />
+      <workItem from="1594628550941" duration="6638000" />
     </task>
     <servers />
   </component>
@@ -176,6 +186,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594631499918">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594631499918" />
     <state x="1458" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1590659752270">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
@@ -188,9 +202,10 @@
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
     <state x="2160" y="448" key="NewPhpFileDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590737790181" />
-    <state x="2137" y="236" key="RollbackChangesDialog" timestamp="1590720985711">
-      <screen x="1366" y="0" width="1920" height="1050" />
+    <state x="771" y="236" key="RollbackChangesDialog" timestamp="1594631561012">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="771" y="236" key="RollbackChangesDialog/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594631561012" />
     <state x="2137" y="236" key="RollbackChangesDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590720985711" />
     <state x="2022" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1590657102287">
       <screen x="1366" y="0" width="1920" height="1050" />
@@ -204,5 +219,9 @@
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
     <state x="1982" y="243" key="run.anything.popup/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590482998780" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1594634009338">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594634009338" />
   </component>
 </project>
