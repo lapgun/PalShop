@@ -12,17 +12,22 @@
             </div>
             <div class="sidebar-header">
                 <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                    <img class="img-responsive img-rounded"
+                         src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
                          alt="User picture">
                 </div>
                 <div class="user-info">
           <span class="user-name">
-            <strong>{{ Auth::user()->name }}</strong>
+{{--            <strong>{{ Auth::user()->name }}</strong>--}}
           </span>
-                    <span class="user-role">{{ Auth::user()->role_type }}</span>
+{{--                    <span class="user-role">{{ Auth::user()->role_type }}</span>--}}
                     <span class="user-status">
             <i class="fa fa-circle"></i>
-            <span>Online</span>
+{{--                 @if((Auth::user()->active) == 1)--}}
+{{--                     <span>Online</span>--}}
+{{--                  @else--}}
+{{--                      <span>inactive</span>--}}
+{{--                  @endif--}}
           </span>
                 </div>
             </div>
@@ -176,7 +181,7 @@
         </div>
     </nav>
     <!-- sidebar-wrapper  -->
-    @yield('content')
-    <!-- page-content" -->
+@yield('content')
+<!-- page-content" -->
 </div>
 
