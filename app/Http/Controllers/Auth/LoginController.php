@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class LoginController extends Controller
@@ -66,7 +67,7 @@ class LoginController extends Controller
                 return $this->redirectTo();
             }
 
-            if (Gate::allows(Common::ROLES['SUPER'])) {
+            if (Auth::user()['role_type'] === Common::ROLES['SUPER']) {
                 return '/home';
             }
 
@@ -81,12 +82,12 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $roles = Gate::allows(Common::ROLES['SUPER']);
+        $roles = Auth::user()['role_type'];
         $this->guard()->logout();
         $request->session()->invalidate();
-        if ($roles == true) {
-            return $this->loggedOut($request) ?: redirect('/');
-        } else
+        if ($roles === common::ROLES['SUPER']) {
             return $this->loggedOut($request) ?: redirect('/home');
+        } else
+            return $this->loggedOut($request) ?: redirect('/');
     }
 }
