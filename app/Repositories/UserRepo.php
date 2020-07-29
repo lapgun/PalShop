@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 use App\User;
 
@@ -11,5 +12,8 @@ class UserRepo
     public function deleteAll()
     {
         return User::query()->delete();
+    }
+    public function getAll(){
+        return User::all();
     }
 }

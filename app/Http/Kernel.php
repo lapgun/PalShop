@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AllowGuestUser;
+use App\Http\Middleware\AllowSuperUser;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -63,5 +65,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'superuser.allow' =>AllowSuperUser::class,
+        'guest.allow' =>AllowGuestUser::class,
     ];
 }

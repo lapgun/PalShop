@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -78,16 +78,5 @@ class LoginController extends Controller
             report($e);
             return abort(500);
         }
-    }
-
-    public function logout(Request $request)
-    {
-        $roles = Auth::user()['role_type'];
-        $this->guard()->logout();
-        $request->session()->invalidate();
-        if ($roles === common::ROLES['SUPER']) {
-            return $this->loggedOut($request) ?: redirect('/home');
-        } else
-            return $this->loggedOut($request) ?: redirect('/');
     }
 }

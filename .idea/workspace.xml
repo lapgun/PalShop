@@ -2,9 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="876bb5a4-4795-431b-a68a-00bf2e7c53c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/admin/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/admin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pal-snaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pal-snaker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/UserRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/UserRepo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,8 +154,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/MCMM" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -136,6 +164,15 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js" />
+      <recent name="C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\sass\adminLte" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -155,11 +192,71 @@
       <updated>1589949857271</updated>
       <workItem from="1589949858931" duration="2922000" />
       <workItem from="1590133767992" duration="686000" />
-      <workItem from="1593226122186" duration="801000" />
+      <workItem from="1590656936782" duration="108000" />
+      <workItem from="1590657074614" duration="24463000" />
+      <workItem from="1594628550941" duration="7917000" />
+      <workItem from="1594827107688" duration="2213000" />
+      <workItem from="1594916013570" duration="154000" />
+      <workItem from="1595065456550" duration="2901000" />
+      <workItem from="1595345691006" duration="1191000" />
+      <workItem from="1595937889426" duration="1179000" />
+      <workItem from="1596032129287" duration="6933000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594631499918">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594631499918" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596035856093">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1596035856093" />
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1596035360588">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1458" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590659752270" />
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1596035360588" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1595346331719">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2106" y="280" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590744228350" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1595346331719" />
+    <state x="757" y="339" key="NewPhpClassDialog" timestamp="1596035801353">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="757" y="339" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1596035801353" />
+    <state x="2160" y="448" key="NewPhpFileDialog" timestamp="1590737790181">
+      <screen x="1366" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2160" y="448" key="NewPhpFileDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590737790181" />
+    <state x="771" y="236" key="RollbackChangesDialog" timestamp="1596034250479">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="771" y="236" key="RollbackChangesDialog/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594631561012" />
+    <state x="2137" y="236" key="RollbackChangesDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590720985711" />
+    <state x="771" y="236" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1596034250479" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1596032996572">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2022" y="349" key="com.intellij.ide.util.TipDialog/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590657102287" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1596032996572" />
+    <state x="656" y="257" width="607" height="536" key="find.popup" timestamp="1596035482614">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2022" y="257" width="607" height="536" key="find.popup/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590749769981" />
+    <state x="656" y="257" width="607" height="536" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1596035482614" />
+    <state x="1982" y="243" key="run.anything.popup" timestamp="1590482998780">
+      <screen x="1366" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1982" y="243" key="run.anything.popup/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1590482998780" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1594634009338">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1594634009338" />
   </component>
 </project>
