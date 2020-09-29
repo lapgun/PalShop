@@ -30,8 +30,4 @@ class AccountController extends Controller
             return abort(500);
         }
     }
-
-    public function adminIndex(){
-        return view('admin.user.index');
-    }
 }

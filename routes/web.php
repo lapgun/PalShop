@@ -20,9 +20,7 @@ Auth::routes(['register' => true]);
 Route::group(['middleware' => 'auth'], function (){
     Route::group(['middleware' => 'superuser.allow'], function (){
         Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('/admin', 'AccountController@adminIndex')->name('admin.index');
-        Route::get('accounts', 'AccountController@index')
-            ->name('accounts.index');
+        Route::get('/accounts', 'AccountController@index')->name('accounts.index');
     });
 
     Route::group(['middleware' => 'guest.allow'], function (){

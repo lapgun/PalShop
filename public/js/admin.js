@@ -104,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\admin\admin.js */"./resources/js/admin/admin.js");
+module.exports = __webpack_require__(/*! D:\palshop\PalShop\resources\js\admin\admin.js */"./resources/js/admin/admin.js");
 
 
 /***/ })
