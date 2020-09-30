@@ -11,8 +11,8 @@
                                 class="fa fa-bars" aria-hidden="true"></i> Open/Close menu</a>
                         <div id="menulinks" class="nav nav-pills collapse">
                             <a href="{{ route('home') }}" class="nav-link "><i class="fas fa-home"
-                                                                               aria-hidden="true"></i>Home</a>
-                            <a href="{{ route('accounts.index') }}" class="nav-link "><i class="fas fa-user"></i>
+                                                                               aria-hidden="true"></i> Home</a>
+                            <a href="{{ route('admin.index') }}" class="nav-link "><i class="fas fa-user"></i>
                                 Management User</a>
                             <a href="#" class="nav-link "><i class="fab fa-product-hunt"></i> Product</a>
                             <a href="#" class="nav-link "><i class="fas fa-image"></i> Photo Library</a>
@@ -24,7 +24,7 @@
         <div id="content" class="col-lg-10">
             <div class="card">
                 <div class="breadcrumb">
-                    <a href="#" target="blank" class="nav-link "><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+                    <a href="{{ route('home') }}" class="nav-link "><i class="fas fa-home" aria-hidden="true"></i> Home</a>
                 </div>
                 <div class="list-user">
                     <h1>welcome to admin site</h1>
@@ -32,5 +32,4 @@
             </div>
         </div>
     </div>
-
 @endsection

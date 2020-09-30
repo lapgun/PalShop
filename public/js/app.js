@@ -52708,9 +52708,6 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = vue__WEBPACK_IMPORTED_MODULE_1___default.a;
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
-  el: '#app'
-});
 
 /***/ }),
 
@@ -52857,9 +52854,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\palshop\PalShop\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\palshop\PalShop\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\palshop\PalShop\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

@@ -10966,8 +10966,7 @@ a.text-dark:focus {
 }
 
 #content {
-  padding-left: 0px !important;
-  padding-right: 40px !important;
+  padding-left: 15px !important;
 }
 
 .list-user {
@@ -10977,9 +10976,18 @@ a.text-dark:focus {
 
 .list-user .list-data table thead tr {
   background: #566573;
+  overflow: auto;
 }
 
 .list-user .form-data table thead tr th {
   background: #566573;
+}
+
+.fa-trash-alt {
+  color: #ffffff;
+}
+
+.fa-edit {
+  color: #ffffff;
 }
 

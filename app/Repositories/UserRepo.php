@@ -16,4 +16,7 @@ class UserRepo
     public function getAll(){
         return User::all();
     }
+    public function deleteUserById($id){
+        return User::query()->where('id', $id)->delete();
+    }
 }

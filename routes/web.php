@@ -20,7 +20,12 @@ Auth::routes(['register' => true]);
 Route::group(['middleware' => 'auth'], function (){
     Route::group(['middleware' => 'superuser.allow'], function (){
         Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('/accounts', 'AccountController@index')->name('accounts.index');
+        Route::group(['prefix' => 'admin'], function (){
+            Route::get('/', 'AccountController@index')->name('admin.index');
+            Route::get('/list-user', 'AccountController@getAll')->name('admin.list-user');
+            Route::post('/store', 'AccountController@store')->name('admin.store');
+            Route::delete('/user/{id}', 'AccountController@removeUserById')->name('admin.remove');
+        });
     });
 
     Route::group(['middleware' => 'guest.allow'], function (){
