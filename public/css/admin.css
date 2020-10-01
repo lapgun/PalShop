@@ -15,7 +15,7 @@
 }
 
 .card {
-  background-color: #fcfeff;
+  background-color: #f1fcff;
 }
 
 .fa-ban {
@@ -54,5 +54,13 @@
 
 .fa-edit {
   color: #ffffff;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.breadcrumb {
+  background-color: #b6d1ec;
 }
 

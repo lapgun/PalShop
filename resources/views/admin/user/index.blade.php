@@ -43,22 +43,34 @@
                                         <form @submit.prevent="handleSubmit()">
                                             <div class="form-group">
                                                 <label for="name">{{ __('Name') }}</label>
-                                                <input type="text" v-model="user.name" class="form-control" required>
+                                                <input type="text" v-model="user.name" class="form-control" >
+                                                <template v-if="listError.name">
+                                                    <div v-for="error in listError.name" class="invalid-feedback">@{{ error }}</div>
+                                                </template>
                                             </div>
                                             <div class="form-group">
                                                 <label for="email">{{ __('E-Mail Address') }}</label>
-                                                <input  type="email" v-model="user.email" class="form-control" required>
+                                                <input  type="text" v-model="user.email" class="form-control" >
+                                                <template v-if="listError.email">
+                                                    <div v-for="error in listError.email" class="invalid-feedback">@{{ error }}</div>
+                                                </template>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password">{{ __('Password') }}</label>
-                                                <input type="password" v-model="user.password" class="form-control" required >
+                                                <input type="password" v-model="user.password" class="form-control">
+                                                <template v-if="listError.password">
+                                                    <div v-for="error in listError.password" class="invalid-feedback">@{{ error }}</div>
+                                                </template>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                                                <input type="password" v-model="user.password_confirmation" class="form-control" required>
+                                                <input type="password" v-model="user.password_confirmation" class="form-control" >
+                                                <template v-if="listError.password_confirmation">
+                                                    <div v-for="error in listError.password_confirmation" class="invalid-feedback">@{{ error }}</div>
+                                                </template>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary float-right">{{ __('Register') }}</button>
+                                                <button type="submit" class="btn btn-primary float-right">Submit</button>
                                             </div>
                                         </form>
                                     </td>

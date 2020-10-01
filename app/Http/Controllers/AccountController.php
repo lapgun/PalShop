@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Constants\common;
+use App\Http\Requests\StoreUserRequest;
 use App\Repositories\UserRepo;
 use Exception;
 use Illuminate\Http\Request;
@@ -39,7 +40,7 @@ class AccountController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
         try {
             DB::beginTransaction();

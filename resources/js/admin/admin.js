@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import axios from 'axios';
+import VueSimpleAlert from "vue-simple-alert";
+
+Vue.use(VueSimpleAlert);
 
 let vue = new Vue({
     el: '#admin-site',
@@ -10,32 +13,30 @@ let vue = new Vue({
             password: '',
             password_confirmation: ''
         },
+        listError: [],
         listUser: [],
-        role_type : 'GUEST'
+        role_type: 'GUEST'
     },
     created() {
         this.getListUser();
     },
     methods: {
         getListUser() {
-            axios.get('admin/list-user').then(res => {
-                this.listUser = res.data.data;
-            }).catch(error => {
-                return error.response;
+            axios.get('admin/list-user')
+                .then(res => {
+                    this.listUser = res.data.data;
+                }).catch(error => {
+                this.listError = error.response.data.errors;
             })
         },
         handleSubmit() {
-            if (this.user.password != this.user.password_confirmation) {
-                alert('please ! enter password matching password confirm');
-            } else {
-                axios.post('admin/store', this.user)
-                    .then(res => {
-                        this.getListUser();
-                        this.clearForm();
-                    }).catch(error => {
-                    return error.response;
-                });
-            }
+            axios.post('admin/store', this.user)
+                .then(res => {
+                    this.getListUser();
+                    this.clearForm();
+                }).catch(error => {
+                this.listError = error.response.data.errors;
+            });
         },
         clearForm() {
             this.user.name = '';
@@ -46,10 +47,10 @@ let vue = new Vue({
         handleDeleteUser(id) {
             axios.delete('admin/user/' + id)
                 .then(res => {
-                    alert('delete success');
+                    this.$alert('Are you sure?', 'warning', 'warning');
                     this.getListUser();
                 }).catch(error => {
-                return error.response;
+                this.$alert('Are you sure?', 'warning', 'warning');
             })
         }
     },
