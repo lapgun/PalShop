@@ -24,10 +24,11 @@ class AccountController extends Controller
         return view('admin.user.index');
     }
 
-    public function getAll()
+    public function getAll(Request $request)
     {
+        $req = $request->all();
         try {
-            $users = $this->userRepo->getAll();
+            $users = $this->userRepo->getAll($req);
 
             if (isset($users)) {
                 return response()->json(['data' => $users]);
@@ -54,19 +55,47 @@ class AccountController extends Controller
             ];
             $this->userRepo->insert($user);
             DB::commit();
-            return ['message' => 'import success'];
+            return [
+                'message' => 'import success',
+                'status' => '200'
+            ];
         } catch (Exception $ex) {
+            report($ex);
             DB::rollBack();
-            return ['message' => $ex];
+            return abort(500);
         }
 
     }
-    public function removeUserById($id){
+
+    public function removeUserById($id)
+    {
         try {
             $this->userRepo->deleteUserById($id);
-            return ['message' =>  'delete user success'];
-        }catch (Exception $ex){
-            return ['message' => 'delete fail', 'error' => $ex];
+            return [
+                'message' => 'delete user success',
+                'status' => '200'
+            ];
+        } catch (Exception $ex) {
+            report($ex);
+            return abort(500);
+        }
+    }
+
+    public function update(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $data = $request->all();
+            $this->userRepo->updateUserById($data);
+            DB::commit();
+            return [
+                'message' => 'update user success!',
+                'status' => '200'
+            ];
+        } catch (Exception $ex) {
+            report($ex);
+            DB::rollBack();
+            return abort(500);
         }
     }
 }

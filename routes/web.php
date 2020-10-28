@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function (){
             Route::get('/', 'AccountController@index')->name('admin.index');
             Route::get('/list-user', 'AccountController@getAll')->name('admin.list-user');
             Route::post('/store', 'AccountController@store')->name('admin.store');
+            Route::put('/update', 'AccountController@update')->name('admin.update');
             Route::delete('/user/{id}', 'AccountController@removeUserById')->name('admin.remove');
         });
     });
