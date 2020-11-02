@@ -34,13 +34,17 @@ const vue = new Vue({
     created() {
         this.getListUser();
     },
+    mounted() {
+        $('.dropdown-toggle').dropdown();
+    },
     methods: {
         getListUser() {
             const url = 'admin/list-user';
             axios.get(url, {
                 params: {
                     'limit': this.paginate.limit,
-                    'textSearch': this.textSearch
+                    'textSearch': this.textSearch,
+                    'page' : this.paginate.current_page
                 }
             })
                 .then(res => {

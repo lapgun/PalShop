@@ -17481,6 +17481,9 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   created: function created() {
     this.getListUser();
   },
+  mounted: function mounted() {
+    $('.dropdown-toggle').dropdown();
+  },
   methods: {
     getListUser: function getListUser() {
       var _this = this;
@@ -17489,7 +17492,8 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url, {
         params: {
           'limit': this.paginate.limit,
-          'textSearch': this.textSearch
+          'textSearch': this.textSearch,
+          'page': this.paginate.current_page
         }
       }).then(function (res) {
         _this.paginate.last_page = res.data.data.last_page;

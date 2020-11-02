@@ -15620,7 +15620,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_simple_alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-simple-alert */ "./node_modules/vue-simple-alert/lib/index.js");
- // import axios from 'axios';
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_simple_alert__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -15628,13 +15627,6 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#admin-home',
   mounted: function mounted() {
     $('.dropdown-toggle').dropdown();
-  },
-  methods: {// handelLogout(){
-    //     axios.post('/logout')
-    //         .then(res => {
-    //             console.log(res);
-    //         })
-    // }
   }
 });
 
