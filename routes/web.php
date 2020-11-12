@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function (){
             Route::post('/store', 'AccountController@store')->name('admin.store');
             Route::put('/update', 'AccountController@update')->name('admin.update');
             Route::delete('/user/{id}', 'AccountController@removeUserById')->name('admin.remove');
+            Route::get('/product', 'ProductController@index')->name('product.index');
         });
     });
 

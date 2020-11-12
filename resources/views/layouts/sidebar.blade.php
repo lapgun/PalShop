@@ -19,7 +19,7 @@
     </li>
     <!-- Nav Item - Product Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{ route('product.index') }}">
             <i  class="fas fa-fw fa-gem"></i>
             <span>Product</span>
         </a>
