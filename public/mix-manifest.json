@@ -1,7 +1,8 @@
 {
     "/js/admin/admin.js": "/js/admin/admin.js",
     "/js/admin/home.js": "/js/admin/home.js",
-    "/js/admin/product.js": "/js/admin/product.js",
+    "/js/admin/product/create.js": "/js/admin/product/create.js",
+    "/js/admin/product/index.js": "/js/admin/product/index.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css"

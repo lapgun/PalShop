@@ -21,7 +21,7 @@
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Management User</h6>
+                                <h4 class="m-0 font-weight-bold text-primary">Management List User</h4>
                             </div>
                             @if(Auth::user()->role_type == 'SUPER' && Auth::user()->active == true)
                                 <div class="add-item">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="card-body pt-0">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                        <table class="table table-bordered w-100" cellspacing="0">
                                             <thead>
                                             <tr>
                                                 <th>STT</th>
@@ -66,8 +66,8 @@
                                                 <th>Email</th>
                                                 <th>Role Type</th>
                                                 <th>Status</th>
-                                                <th style="text-align:center;width:100px;">Edit</th>
-                                                <th style="text-align:center;width:100px;">Delete</th>
+                                                <th class="align-center">{{__('common.edit')}}</th>
+                                                <th class="align-center">{{__('common.delete')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -86,7 +86,7 @@
                                                         <span class="badge badge-secondary">In-active</span>
                                                     </td>
                                                 </template>
-                                                <td style="text-align: center">
+                                                <td class="align-center">
                                                     <template v-if="personal.role_type === 'SUPER'">
                                                         <button class="btn btn-info" disabled>
                                                             <i class="fas fa-edit"></i>
@@ -98,7 +98,7 @@
                                                         </button>
                                                     </template>
                                                 </td>
-                                                <td style="text-align: center">
+                                                <td class="align-center">
                                                     <template v-if="personal.role_type === 'SUPER'">
                                                         <button class="btn btn-danger" disabled>
                                                             <i class="fas fa-trash-alt"></i>
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                             @else
-                                <div style="text-align: center; color: red">Do not have permission to view data</div>
+                                <div class="align-center text-danger">{{__('common.not_permission')}}</div>
                             @endif
                         </div>
 

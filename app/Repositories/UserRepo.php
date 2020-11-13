@@ -19,7 +19,7 @@ class UserRepo
             $query->where('name', 'LIKE', '%' . $request['textSearch'] . '%');
             $query->orWhere('email', 'LIKE', '%' . $request['textSearch'] . '%');
         }
-        $query->orderBy('id','asc');
+        $query->orderBy('id','desc');
         return $query->paginate($request['limit']);
     }
     public function deleteUserById($id){
