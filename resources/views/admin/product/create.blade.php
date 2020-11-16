@@ -50,15 +50,9 @@
                                     </div>
                                     <div class="form-group d-flex">
                                         <div class="form-row col-md-6">
-                                            <label for="text">{{ __('Choice File') }}</label>
-                                            <input type="text" v-model="product.image" class="form-control"
-                                                   placeholder="Description">
-                                            <template v-if="listError.image">
-                                                <div v-for="error in listError.image"
-                                                     class="invalid-feedback">@{{ error }}
-                                                </div>
-                                            </template>
+                                            <upload-file  @change="imageUploaded"></upload-file>
                                         </div>
+
                                         <div class="form-row col-md-6">
                                             <label for="text">{{ __('Description') }}</label>
                                             <textarea v-model="product.description" class="form-control"
@@ -71,16 +65,55 @@
                                             </template>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label
-                                            for="text">{{ __('Weight') }}</label>
-                                        <input type="text" v-model="product.weight" class="form-control"
-                                               placeholder="weight">
-                                        <template v-if="listError.weight">
-                                            <div v-for="error in listError.weight"
-                                                 class="invalid-feedback">@{{ error }}
+                                    <div class="form-group d-flex">
+                                        <div class="form-row col-md-6">
+                                            <div class="col-md-6">
+                                                <label
+                                                    for="text">{{ __('Weight') }}</label>
+                                                <input type="text" v-model="product.weight" class="form-control"
+                                                       placeholder="weight">
+                                                <template v-if="listError.weight">
+                                                    <div v-for="error in listError.weight"
+                                                         class="invalid-feedback">@{{ error }}
+                                                    </div>
+                                                </template>
                                             </div>
-                                        </template>
+                                            <div class="col-md-6">
+                                                <label
+                                                    for="text">{{ __('Size') }}</label>
+                                                <input type="text" v-model="product.size" class="form-control"
+                                                       placeholder="size">
+                                                <template v-if="listError.size">
+                                                    <div v-for="error in listError.size"
+                                                         class="invalid-feedback">@{{ error }}
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-6">
+                                            <div class="col-md-6">
+                                                <label
+                                                    for="text">{{ __('Quality') }}</label>
+                                                <input type="text" v-model="product.quality" class="form-control"
+                                                       placeholder="quality">
+                                                <template v-if="listError.quality">
+                                                    <div v-for="error in listError.quality"
+                                                         class="invalid-feedback">@{{ error }}
+                                                    </div>
+                                                </template>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label
+                                                    for="text">{{ __('Price') }}</label>
+                                                <input type="text" v-model="product.price" class="form-control"
+                                                       placeholder="VNĐ">
+                                                <template v-if="listError.price">
+                                                    <div v-for="error in listError.price"
+                                                         class="invalid-feedback">@{{ error }}
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
                                     </div>
                                 </template>
                                 <template v-else>

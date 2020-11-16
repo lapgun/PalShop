@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import axios from 'axios';
 import VueSimpleAlert from "vue-simple-alert";
-
+import uploadFile from "../../components/UploadFile";
 Vue.use(VueSimpleAlert);
-
 const vue = new Vue({
     el: '#product-site-create',
+    components : {
+        'upload-file': uploadFile
+    },
     data: {
         product: {
             id: '',
@@ -25,8 +27,8 @@ const vue = new Vue({
     },
     methods: {
         handleSubmit() {
-            const urlStore = 'product/store';
-            const urlUpdate = 'product/update';
+            const urlStore = '/product/store';
+            const urlUpdate = '/product/update';
             if (this.product.id == '') {
                 axios.post(urlStore, this.product)
                     .then(res => {
@@ -72,6 +74,10 @@ const vue = new Vue({
             this.product.id = product.id;
             this.product.name = product.name;
             this.product.description = product.description;
+        },
+        imageUploaded(data){
+            console.log(data);
+            this.product.image = data;
         }
     },
 });

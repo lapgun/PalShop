@@ -38,7 +38,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        dd($request->get('image')[0]);
     }
 
     public function create()

@@ -30,12 +30,6 @@ Route::group(['middleware' => 'auth'], function () {
         });
 
         Route::group(['prefix' => 'product'], function () {
-//            Route::get('/', 'AccountController@index')->name('admin.index');
-//            Route::get('/list-user', 'AccountController@getAll')->name('admin.list-user');
-//            Route::post('/store', 'AccountController@store')->name('admin.store');
-//            Route::put('/update', 'AccountController@update')->name('admin.update');
-//            Route::delete('/user/{id}', 'AccountController@removeUserById')->name('admin.remove');
-
             Route::get('/', 'ProductController@index')->name('product.index');
             Route::get('/list-product', 'ProductController@getAll')->name('product.list-user');
             Route::post('/store', 'ProductController@store')->name('product.store');
