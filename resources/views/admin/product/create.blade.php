@@ -144,7 +144,7 @@
                                 </template>
                                 <div class="form-group float-right">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="button" class="btn btn-secondary">Back</button>
+                                    <a type="button" class="btn btn-secondary" href="{{ route('product.index') }}">Back</a>
                                 </div>
                             </form>
                         </div>

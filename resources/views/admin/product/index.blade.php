@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="card-body pt-0">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered w-100"  cellspacing="0">
+                                        <table class="table table-bordered w-100" cellspacing="0">
                                             <thead>
                                             <tr>
                                                 <th>STT</th>
@@ -76,9 +76,11 @@
                                             </thead>
                                             <tbody>
                                             <tr v-for="(product, index) in listProduct">
-                                                <td>@{{ index }}</td>
+                                                <td>@{{ index + 1 }}</td>
                                                 <td>@{{ product.name }}</td>
-                                                <td>@{{ product.image }}</td>
+                                                <td>
+                                                    <img style="width: 60px; height: 60px" :src="product.images.length > 0 ? product.images[0].url_link : ''">
+                                                </td>
                                                 <td>@{{ product.description }}</td>
                                                 <td>@{{ product.model }}</td>
                                                 <td>@{{ product.weight }}</td>

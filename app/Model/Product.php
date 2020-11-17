@@ -20,7 +20,7 @@ class Product extends Model
         'updated_at',
     ];
 
-    public function image()
+    public function images()
     {
         return $this->hasMany(Image::class, 'product_id', 'id');
     }
