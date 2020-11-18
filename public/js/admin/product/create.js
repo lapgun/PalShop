@@ -21425,13 +21425,10 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         }
 
         axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(urlStore, formData).then(function (res) {
-          if (res.status == '200') {
-            _this.listError = [];
+          _this.listError = [];
+          location.href = 'http://127.0.0.1:8000/product';
 
-            _this.$alert('Create successfully sent!', 'Success', 'success');
-
-            location.href = 'http://127.0.0.1:8000/product';
-          }
+          _this.$alert('Create successfully sent!', 'Success', 'success');
         })["catch"](function (error) {
           _this.listError = error.response.data.errors;
         });
@@ -21457,16 +21454,6 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       this.product.price = '';
       this.product.quality = '';
     },
-    //     handleDeleteUser(id) {
-    //         const url = 'admin/user/';
-    //         axios.delete(url + id)
-    //             .then(res => {
-    //                 this.$alert('Remove user success ?', 'Success', 'success');
-    //                 this.getListUser();
-    //             }).catch(error => {
-    //             this.$alert('Remove user fail ?', 'Warning', 'warning');
-    //         })
-    //     },
     handleUpdate: function handleUpdate(product) {
       this.product.id = product.id;
       this.product.name = product.name;

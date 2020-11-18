@@ -79,7 +79,7 @@
                                                 <td>@{{ index + 1 }}</td>
                                                 <td>@{{ product.name }}</td>
                                                 <td>
-                                                    <img style="width: 60px; height: 60px" :src="product.images.length > 0 ? product.images[0].url_link : ''">
+                                                    <img style="width: 60px; height: 60px" :src="product.images.length > 0 ? product.images[0].full_url_link : ''">
                                                 </td>
                                                 <td>@{{ product.description }}</td>
                                                 <td>@{{ product.model }}</td>
@@ -94,7 +94,7 @@
 
                                                 </td>
                                                 <td class="align-center">
-                                                    <button class="btn btn-danger">
+                                                    <button class="btn btn-danger" @click="handleDeleteProduct(product.id)">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </td>

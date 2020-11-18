@@ -40,5 +40,15 @@ const vue = new Vue({
                     this.listProduct = res.data.data.data;
                 })
         },
+        handleDeleteProduct(id) {
+            const url = 'product/';
+            axios.delete(url + id)
+                .then(res => {
+                    this.getListProduct();
+                    this.$alert('Remove user success ?', 'Success', 'success');
+                }).catch(error => {
+                this.$alert('Remove user fail ?', 'Warning', 'warning');
+            })
+        },
     },
 });

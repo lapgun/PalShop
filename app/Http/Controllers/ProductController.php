@@ -7,6 +7,7 @@ use App\Repositories\ProductRepo;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -35,9 +36,16 @@ class ProductController extends Controller
     {
         $req = $request->all();
         try {
-            $product = $this->productRepo->getAll($req);
-            if (isset($product)) {
-                return response()->json(['data' => $product]);
+            $products = $this->productRepo->getAll($req);
+            if (isset($products)) {
+                $products->getCollection()->transform(function ($product) {
+                    $product->images->transform(function ($image) {
+                        $image->full_url_link = Storage::url($image->url_link);
+                        return $image;
+                    });
+                    return $product;
+                });
+                return response()->json(['data' => $products]);
             }
             return abort(500);
 
@@ -61,17 +69,22 @@ class ProductController extends Controller
             $product['size'] = $request->get('size');
             $product['quality'] = $request->get('quality');
             $product['price'] = $request->get('price');
+
             DB::beginTransaction();
+
             $productId = $this->productRepo->create($product);
+
             if (isset($productId)) {
                 $images = [];
                 if ($files = $request->file('image')) {
                     foreach ($files as $file) {
                         $type = $file->getClientMimeType();
                         $name = $file->getClientOriginalName();
-                        $file->move('storage/app/public', $name);
+
+                        $imagePath = Storage::putFileAs('', $file, $name);
+
                         $images[] = [
-                            'url_link' => 'storage/app/public/' . $name,
+                            'url_link' => $imagePath,
                             'product_id' => $productId,
                             'type' => $type
                         ];
@@ -79,7 +92,9 @@ class ProductController extends Controller
                 }
                 $this->imageRepo->insertImageByProductId($images);
             }
+
             DB::commit();
+
             return [
                 'message' => 'success',
                 'status' => '200'
@@ -97,6 +112,27 @@ class ProductController extends Controller
     public function create()
     {
         return view('admin.product.create');
+    }
+
+    public function delete($id)
+    {
+        try {
+            DB::beginTransaction();
+            $images = $this->imageRepo->getImagesByProductId($id);
+            $listUrl = $images->pluck('url_link');
+            Storage::delete($listUrl);
+
+            $this->productRepo->deleteById($id);
+            $this->imageRepo->deleteImagesByProductId($id);
+            DB::commit();
+            return [
+                'message' => 'success',
+                'status' => '200'
+            ];
+        } catch (Exception $ex) {
+            report($ex);
+            return abort(500);
+        }
     }
 
 }

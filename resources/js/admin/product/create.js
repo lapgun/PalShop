@@ -3,18 +3,19 @@ import axios from 'axios';
 import VueSimpleAlert from "vue-simple-alert";
 import uploadFile from "../../components/UploadFile";
 import router from "vue-router";
+
 Vue.use(VueSimpleAlert);
 Vue.use(router);
 const vue = new Vue({
     el: '#product-site-create',
-    components : {
+    components: {
         'upload-file': uploadFile
     },
     data: {
         product: {
             id: '',
             name: '',
-            image:[],
+            image: [],
             description: '',
             model: '',
             size: '',
@@ -22,7 +23,7 @@ const vue = new Vue({
             price: '',
             quality: ''
         },
-        listError : []
+        listError: []
     },
     mounted() {
         $('.dropdown-toggle').dropdown();
@@ -44,11 +45,9 @@ const vue = new Vue({
                 }
                 axios.post(urlStore, formData)
                     .then(res => {
-                        if(res.status == '200'){
-                            this.listError = [];
-                            this.$alert('Create successfully sent!', 'Success', 'success');
-                            location.href = 'http://127.0.0.1:8000/product';
-                        }
+                        this.listError = [];
+                        location.href = 'http://127.0.0.1:8000/product';
+                        this.$alert('Create successfully sent!', 'Success', 'success');
                     }).catch(error => {
                     this.listError = error.response.data.errors;
                 });
@@ -73,22 +72,12 @@ const vue = new Vue({
             this.product.price = '';
             this.product.quality = '';
         },
-        //     handleDeleteUser(id) {
-        //         const url = 'admin/user/';
-        //         axios.delete(url + id)
-        //             .then(res => {
-        //                 this.$alert('Remove user success ?', 'Success', 'success');
-        //                 this.getListUser();
-        //             }).catch(error => {
-        //             this.$alert('Remove user fail ?', 'Warning', 'warning');
-        //         })
-        //     },
         handleUpdate(product) {
             this.product.id = product.id;
             this.product.name = product.name;
             this.product.description = product.description;
         },
-        imageUploaded(data){
+        imageUploaded(data) {
             this.product.image = Object.values(data);
         }
     },

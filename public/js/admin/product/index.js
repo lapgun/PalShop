@@ -17488,6 +17488,18 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         _this.paginate.last_page = res.data.data.last_page;
         _this.listProduct = res.data.data.data;
       });
+    },
+    handleDeleteProduct: function handleDeleteProduct(id) {
+      var _this2 = this;
+
+      var url = 'product/';
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](url + id).then(function (res) {
+        _this2.getListProduct();
+
+        _this2.$alert('Remove user success ?', 'Success', 'success');
+      })["catch"](function (error) {
+        _this2.$alert('Remove user fail ?', 'Warning', 'warning');
+      });
     }
   }
 });
