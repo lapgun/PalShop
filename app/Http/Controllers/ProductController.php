@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProductRequest;
 use App\Repositories\ImageRepo;
 use App\Repositories\ProductRepo;
 use Exception;
@@ -59,7 +60,7 @@ class ProductController extends Controller
      * @param Request $request
      * @return array|void
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         try {
             $product['name'] = $request->get('name');
@@ -119,8 +120,11 @@ class ProductController extends Controller
         try {
             DB::beginTransaction();
             $images = $this->imageRepo->getImagesByProductId($id);
+
             $listUrl = $images->pluck('url_link');
-            Storage::delete($listUrl);
+            foreach ($listUrl as $url){
+                Storage::delete($url);
+            }
 
             $this->productRepo->deleteById($id);
             $this->imageRepo->deleteImagesByProductId($id);
@@ -130,6 +134,7 @@ class ProductController extends Controller
                 'status' => '200'
             ];
         } catch (Exception $ex) {
+            dd($ex);
             report($ex);
             return abort(500);
         }
