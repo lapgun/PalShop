@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="card-body pt-0">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered w-100" cellspacing="0">
+                                        <table class="table table-bordered table-striped w-100" cellspacing="0">
                                             <thead>
                                             <tr>
                                                 <th>STT</th>

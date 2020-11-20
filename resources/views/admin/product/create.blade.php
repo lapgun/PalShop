@@ -5,17 +5,13 @@
             <!-- Sidebar -->
         @include('layouts.sidebar')
         <!-- End of Sidebar -->
-
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
-
                 <!-- Main Content -->
                 <div id="content">
-
                     <!-- Topbar -->
                 @include('layouts.topbar')
                 <!-- End of Topbar -->
-
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <h1 style="font-family: 'Comic Sans MS'"> Form Product </h1>
@@ -117,36 +113,14 @@
                                         </div>
                                     </div>
                                 </template>
-                                <template v-else>
-                                    <div class="form-group">
-                                        <label>Role Type</label>
-                                        <select v-model="user.role" class="form-control">
-                                            <option value="SUPER">SUPER</option>
-                                            <option value="GUEST">GUEST</option>
-                                        </select>
-                                        <template v-if="listError.role">
-                                            <div v-for="error in listError.role"
-                                                 class="invalid-feedback">@{{ error }}
-                                            </div>
-                                        </template>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Status</label>
-                                        <select type="text" v-model="user.status" class="form-control">
-                                            <option value="true">Active</option>
-                                            <option value="false">In-active</option>
-                                        </select>
-                                        <template v-if="listError.status">
-                                            <div v-for="error in listError.status"
-                                                 class="invalid-feedback">@{{ error }}
-                                            </div>
-                                        </template>
-                                    </div>
-                                </template>
                                 <div class="form-group float-right">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        {{__('common.submit')}}
+                                    </button>
                                     <a type="button" class="btn btn-secondary"
-                                       href="{{ route('product.index') }}">Back</a>
+                                       href="{{ route('product.index') }}">
+                                        {{__('common.back')}}
+                                    </a>
                                 </div>
                             </form>
                         </div>
@@ -156,10 +130,8 @@
                 <!-- Footer -->
             @include('layouts.footer')
             <!-- End of Footer -->
-
             </div>
             <!-- End of Content Wrapper -->
-
         </div>
         <!-- End of Page Wrapper -->
     </div>

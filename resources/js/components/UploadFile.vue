@@ -2,7 +2,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <input type="file" id="files" ref="files" multiple @change="handleFilesUpload()"/>
+                <label class="filelabel">
+                    <i class="fa fa-paperclip">
+                    </i>
+                    <span class="title">
+                        Add File
+                    </span>
+                    <input class="FileUpload1 col-md-6" mutilfile id="FileInput" name="booking_attachment" type="file" ref="files" multiple @change="handleFilesUpload()"/>
+                </label>
             </div>
         </div>
         <div class="large-12 medium-12 small-12 cell">
@@ -25,40 +32,12 @@
             };
         },
         methods: {
-            // submitFiles() {
-            //     if (!this.checkFilesValid()) {
-            //         console.log(
-            //             "%cMax file is 5, please remove some picsture",
-            //             "color: red; font-size: 20px;"
-            //         );
-            //     }
-            // else {
-            //     let formData = new FormData();
-            //     for (let i = 0; i < this.files.length; i++) {
-            //         formData.append("files", this.files[i]);
-            //     }
-            //    axios.post("/gallery/upload", formData, {
-            //             headers: { "Content-Type": "multipart/form-data" }
-            //         })
-            //         .then(response => {
-            //             this.$emit("uploaded", { productImageInfo: response.data.data });
-            //             this.files = "";
-            //         })
-            //         .catch(error => {
-            //             console.log(
-            //                 "%cOops! something went wrong!",
-            //                 "color: red; font-size: 20px;"
-            //             );
-            //             console.log(error);
-            //         });
-            // }
-            // },
             handleFilesUpload() {
                 let uploadedFiles = this.$refs.files.files;
                 for (let i = 0; i < uploadedFiles.length; i++) {
                     this.files.push(uploadedFiles[i]);
                 }
-                this.$emit('change',uploadedFiles);
+                this.$emit('change', uploadedFiles);
             },
             removeFile(key) {
                 this.files.splice(key, 1);
@@ -74,7 +53,7 @@
         width: 200px;
     }
 
-    span .remove-file{
+    span .remove-file {
         color: red;
         cursor: pointer;
         float: right;
@@ -86,5 +65,36 @@
 
     div input {
         margin-left: -15px;
+    }
+    .filelabel {
+        width: 447px;
+        border: 2px dashed grey;
+        border-radius: 5px;
+        display: block;
+        padding: 5px;
+        transition: border 300ms ease;
+        cursor: pointer;
+        text-align: center;
+        margin: 0;
+    }
+    .filelabel i {
+        display: block;
+        font-size: 30px;
+        padding-bottom: 5px;
+    }
+    .filelabel i,
+    .filelabel .title {
+        color: grey;
+        transition: 200ms color;
+    }
+    .filelabel:hover {
+        border: 2px solid #1665c4;
+    }
+    .filelabel:hover i,
+    .filelabel:hover .title {
+        color: #1665c4;
+    }
+    #FileInput{
+        display:none;
     }
 </style>
