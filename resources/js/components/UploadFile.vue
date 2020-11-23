@@ -8,7 +8,7 @@
                     <span class="title">
                         Add File
                     </span>
-                    <input class="FileUpload1 col-md-6" mutilfile id="FileInput" name="booking_attachment" type="file" ref="files" multiple @change="handleFilesUpload()"/>
+                    <input class="FileUpload1 col-md-6" id="FileInput" name="booking_attachment" type="file" ref="files" multiple @change="handleFilesUpload()"/>
                 </label>
             </div>
         </div>

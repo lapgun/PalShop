@@ -44,6 +44,7 @@ class ProductController extends Controller
                         $image->full_url_link = Storage::url($image->url_link);
                         return $image;
                     });
+                    $product->urlEdit = 'product/edit/' . $product->id;
                     return $product;
                 });
                 return response()->json(['data' => $products]);
@@ -115,6 +116,18 @@ class ProductController extends Controller
         return view('admin.product.create');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit()
+    {
+        return view('admin.product.edit');
+    }
+
+    /**
+     * @param $id
+     * @return array|void
+     */
     public function delete($id)
     {
         try {
@@ -122,7 +135,7 @@ class ProductController extends Controller
             $images = $this->imageRepo->getImagesByProductId($id);
 
             $listUrl = $images->pluck('url_link');
-            foreach ($listUrl as $url){
+            foreach ($listUrl as $url) {
                 Storage::delete($url);
             }
 
@@ -134,7 +147,25 @@ class ProductController extends Controller
                 'status' => '200'
             ];
         } catch (Exception $ex) {
-            dd($ex);
+            report($ex);
+            return abort(500);
+        }
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|void
+     */
+    public function getProductById($id)
+    {
+        try {
+            $product = $this->productRepo->getProductById($id);
+            $product->images->transform(function ($image) {
+                $image->full_url_link = Storage::url($image->url_link);
+                return $image;
+            });
+            return response()->json(['data' => $product]);
+        } catch (Exception $ex) {
             report($ex);
             return abort(500);
         }

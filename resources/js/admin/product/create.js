@@ -31,8 +31,6 @@ const vue = new Vue({
     methods: {
         handleSubmit() {
             const urlStore = '/product/store';
-            const urlUpdate = '/product/update';
-            if (this.product.id == '') {
                 const formData = new FormData;
                 for (const key in this.product) {
                     if (Array.isArray(this.product[key])) {
@@ -51,31 +49,6 @@ const vue = new Vue({
                     }).catch(error => {
                     this.listError = error.response.data.errors;
                 });
-            } else {
-                axios.put(urlUpdate, this.product)
-                    .then(res => {
-                        this.getListProduct();
-                        this.listError = [];
-                        this.$alert('Update successfully sent!', 'Success', 'success');
-                    }).catch(error => {
-                    this.listError = error.response.data.errors;
-                });
-            }
-        },
-        clearForm() {
-            this.product.id = '';
-            this.product.name = '';
-            this.product.description = '';
-            this.product.size = '';
-            this.product.weight = '';
-            this.product.model = '';
-            this.product.price = '';
-            this.product.quality = '';
-        },
-        handleUpdate(product) {
-            this.product.id = product.id;
-            this.product.name = product.name;
-            this.product.description = product.description;
         },
         imageUploaded(data) {
             this.product.image = Object.values(data);

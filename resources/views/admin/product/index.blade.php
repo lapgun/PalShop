@@ -88,9 +88,9 @@
                                                 <td>@{{ product.price }}</td>
                                                 <td>@{{ product.quality }}</td>
                                                 <td class="align-center">
-                                                    <button class="btn btn-info">
+                                                    <a class="btn btn-info" :href="product.urlEdit">
                                                         <i class="fas fa-edit"></i>
-                                                    </button>
+                                                    </a>
 
                                                 </td>
                                                 <td class="align-center">

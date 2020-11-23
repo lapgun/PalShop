@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -21336,10 +21336,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/admin/product/create.js":
-/*!**********************************************!*\
-  !*** ./resources/js/admin/product/create.js ***!
-  \**********************************************/
+/***/ "./resources/js/admin/product/edit.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/product/edit.js ***!
+  \********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -21386,12 +21386,35 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   },
   mounted: function mounted() {
     $('.dropdown-toggle').dropdown();
+    this.getProductById();
   },
   methods: {
-    handleSubmit: function handleSubmit() {
+    getProductById: function getProductById() {
       var _this = this;
 
-      var urlStore = '/product/store';
+      var pathname = location.pathname.split('/', 4);
+      var productId = pathname[3];
+      var urlGetProductById = '/product/item/';
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(urlGetProductById + productId).then(function (res) {
+        var response = res.data.data;
+        console.log(response);
+        _this.product.id = response.id;
+        _this.product.name = response.name;
+        _this.product.image = response.images;
+        _this.product.model = response.model;
+        _this.product.description = response.description;
+        _this.product.price = response.price;
+        _this.product.quality = response.quality;
+        _this.product.size = response.size;
+        _this.product.weight = response.weight;
+      })["catch"](function (error) {
+        _this.listError = error.response.data.errors;
+      });
+    },
+    handleSubmit: function handleSubmit() {
+      var _this2 = this;
+
+      var urlUpdate = '/product/update';
       var formData = new FormData();
 
       for (var key in this.product) {
@@ -21414,14 +21437,30 @@ var vue = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         }
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(urlStore, formData).then(function (res) {
-        _this.listError = [];
-        location.href = 'http://127.0.0.1:8000/product';
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(urlUpdate, this.product).then(function (res) {
+        _this2.getListProduct();
 
-        _this.$alert('Create successfully sent!', 'Success', 'success');
+        _this2.listError = [];
+
+        _this2.$alert('Update successfully sent!', 'Success', 'success');
       })["catch"](function (error) {
-        _this.listError = error.response.data.errors;
+        _this2.listError = error.response.data.errors;
       });
+    },
+    clearForm: function clearForm() {
+      this.product.id = '';
+      this.product.name = '';
+      this.product.description = '';
+      this.product.size = '';
+      this.product.weight = '';
+      this.product.model = '';
+      this.product.price = '';
+      this.product.quality = '';
+    },
+    handleUpdate: function handleUpdate(product) {
+      this.product.id = product.id;
+      this.product.name = product.name;
+      this.product.description = product.description;
     },
     imageUploaded: function imageUploaded(data) {
       this.product.image = Object.values(data);
@@ -21518,14 +21557,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
-/*!****************************************************!*\
-  !*** multi ./resources/js/admin/product/create.js ***!
-  \****************************************************/
+/***/ 5:
+/*!**************************************************!*\
+  !*** multi ./resources/js/admin/product/edit.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\admin\product\create.js */"./resources/js/admin/product/create.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Pal-Snaker\Pal-snaker\resources\js\admin\product\edit.js */"./resources/js/admin/product/edit.js");
 
 
 /***/ })
